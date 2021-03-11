@@ -1,12 +1,37 @@
 
 exports.min = function min (array) {
-  return 0;
+  if(array == undefined || !array.length ){
+    return 0;
+  }
+  let min;
+  array.map(el=>{
+    if(min > el || !min){
+      min = el;
+    }
+  })
+  return min;
 }
 
 exports.max = function max (array) {
-  return 0;
+  if(array == undefined || !array.length ){
+    return 0;
+  }
+  let max;
+  array.map(el=>{
+    if(max < el || !max){
+      max = el;
+    }
+  })
+  return max;
 }
 
 exports.avg = function avg (array) {
-  return 0;
+  if(array == undefined || !array.length ){
+    return 0;
+  }
+  let sum = array.reduce((a,b)=>{
+    return a+b;
+  },0);
+
+  return sum/array.length;
 }
